@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyledIcon } from './Icon.styles';
 
 type IconNames =
-	'arrowbigger'
+	'arrowBigger'
 	| 'bell'
 	| 'calendar'
 	| 'chart'
 	| 'clock'
 	| 'crown'
-	| 'dumbbell'
+	| 'dumbBell'
 	| 'edit'
 	| 'flame'
 	| 'globe'
 	| 'heart'
 	| 'help'
-	| 'hollowflame'
+	| 'hollowFlame'
 	| 'home'
-	| 'magnifyingglass'
+	| 'magnifyingGlass'
 	| 'minus'
 	| 'moon'
 	| 'plus'
 	| 'runner'
-	| 'runshoe'
+	| 'runShoe'
 	| 'settings'
-	| 'watercup';
+	| 'waterCup';
 
 type IconProps = {
 	iconName: IconNames;
@@ -32,7 +32,7 @@ type IconProps = {
 }
 
 const Icon: React.FC<IconProps> = ({ iconName, size = 20, color = 'black' }) => {
-	const [SVGComponent, setSVGComponent] = useState<React.ComponentType<React.SVGProps<SVGSVGElement>> | null>(null);
+	const [SVGComponent, setSVGComponent] = useState<React.ComponentType | null>(null);
 
 	useEffect(() => {
 		const importSVGComponent = async () => {
