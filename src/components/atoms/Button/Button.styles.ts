@@ -1,14 +1,6 @@
 import styled, { css } from 'styled-components';
 import { colors } from '../../../colors';
-
-export type StyledButtonProps = {
-  type?: "primary" | "outlined" | "premium" | "text" | "icon";
-  size?: "big" | "small"
-  fullWidth?: boolean;
-  backgroundColor?: string;
-  color?: string;
-  borderColor?: string;
-}
+import { StyledButtonProps } from './Button';
 
 export const StyledButton = styled.button<StyledButtonProps>`
   ${(props) => {
