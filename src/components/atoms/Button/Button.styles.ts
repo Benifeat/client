@@ -1,20 +1,13 @@
 import styled, { css } from 'styled-components';
-
-export type StyledButtonProps = {
-	type?: "primary" | "outlined" | "premium" | "text" | "icon";
-	size?: "big" | "small"
-	fullWidth?: boolean;
-	backgroundColor?: string;
-	color?: string;
-	borderColor?: string;
-}
+import { colors } from '../../../colors';
+import { StyledButtonProps } from './Button';
 
 export const StyledButton = styled.button<StyledButtonProps>`
   ${(props) => {
-		props.type = props.type || "primary";
-		props.size = props.size || "big";
-		return null;
-	}}
+    props.type = props.type || "primary";
+    props.size = props.size || "big";
+    return null;
+  }}
 
   display: flex;
   justify-content: center;
@@ -34,44 +27,44 @@ export const StyledButton = styled.button<StyledButtonProps>`
   }
 
   ${({ type }) => {
-		switch (type) {
-			case "primary":
-				return css`
-          background-color: var(--primary);
-          color: var(--black);
+    switch (type) {
+      case "primary":
+        return css`
+          background-color: ${colors.primary};
+          color: ${colors.black};
         `
-			case "premium":
-				return css`
-          background-color: var(--orange);
-          color: var(--black);
+      case "premium":
+        return css`
+          background-color: ${colors.orange};
+          color: ${colors.black};
         `
-			case "outlined":
-				return css`
+      case "outlined":
+        return css`
             background-color: transparent;
-            color: var(--primary);
-            border: 1px solid var(--grey);
+            color: ${colors.primary};
+            border: 1px solid ${colors.grey};
         `
-			case "text":
-				return css`
+      case "text":
+        return css`
           background-color: transparent;
-          color: var(--grey);
+          color: ${colors.grey};
           padding: 4px;
         `
-			case "icon":
-				return css`
-          background-color: var(--primary);
-          color: var(--black);
+      case "icon":
+        return css`
+          background-color: ${colors.primary};
+          color: ${colors.black};
           width: 23px;
           height: 23px;
           padding: 7px;
         `
-		}
-	}}
+    }
+  }}
   
   ${({ color, backgroundColor, borderColor }) => {
-		return css`
+    return css`
       ${color && `color: ${color}`}
       ${backgroundColor && `background-color: ${backgroundColor}`}
       ${borderColor && `border: 1px solid ${borderColor}`}
     `
-	}}`;
+  }}`;
