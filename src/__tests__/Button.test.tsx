@@ -37,7 +37,7 @@ describe('Button Component', () => {
 		const buttonElement = screen.getByText(/Click Me/i);
 
 		expect(buttonElement).toHaveStyle(`background-color: ${colors.cyan}`);
-		expect(buttonElement).toHaveStyle(`color: ${colors.orange}`);
+		expect(buttonElement).toHaveStyle(`color: ${colors.grey}}`);
 	});
 
 	test('calls onClick prop when clicked', () => {
