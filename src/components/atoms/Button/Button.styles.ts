@@ -63,8 +63,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   
   ${({ color, backgroundColor, borderColor }) => {
     return css`
-      ${color && `color: ${color}`}
-      ${backgroundColor && `background-color: ${backgroundColor}`}
-      ${borderColor && `border: 1px solid ${borderColor}`}
+      ${color && `color: ${color};`}
+      ${backgroundColor && `background-color: ${backgroundColor};`}
+      ${borderColor && `border: 1px solid ${borderColor};`}
     `
   }}`;
